@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style/Style.css" />
+    <title>FoodX Menu</title>
+</head>
+<body>
+    <div class="container menu-container">
+        <h1>FoodX Menu</h1>
+        <div class="menu-item" data-table="1">
+            <img src="" alt="Profile Picture"> <span>Table 1</span> >
+        </div>
+        <div class="menu-item" data-table="2">
+            <img src="" alt="Profile Picture"> <span>Table 2</span> >
+        </div>
+        <div class="menu-item" data-table="3">
+            <img src="" alt="Profile Picture"> <span>Table 3</span> >
+        </div>
+        <div class="menu-item" data-table="4">
+            <img src="" alt="Profile Picture"> <span>Table 4</span> >
+        </div>
+        <div class="menu-item" data-table="5">
+            <img src="" alt="Profile Picture"> <span>Table 5</span> >
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuItems = document.querySelectorAll('.menu-item');
+
+            menuItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const tableNumber = item.getAttribute('data-table');
+                    window.location.href = `place-order.php?table=${tableNumber}`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
